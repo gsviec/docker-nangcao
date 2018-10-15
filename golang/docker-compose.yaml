@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: gsviec/hello
+    build: .
+    command: start
+    volumes:
+      - .:/opt
+    ports:
+      - 8080:8080
+    environment:
+      - CONSUL_SERVER=192.168.10.51:8500
+      - DATA_CENTER=staging
+      - PROJECT_NAME=hello-gsviec
